@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// ROUTING
 import { AppRoutingModule } from './app-routing.module';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
+
+// MATERIAL DESIGN
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // FIREBASE
