@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'pwa-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-pwa-app';
+  notes$: Observable<any[]>;
+
+  constructor(private db: AngularFirestore) {
+    this.notes$ = db.collection('notes').valueChanges();
+  }
 }
