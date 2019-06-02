@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 // COMPONENTS
 import { AppComponent } from './app.component';
 
+// MODULES
+import { LayoutModule } from './modules/layout/layout.module';
+import { CoreModule } from './modules/core.module';
+
 // MATERIAL DESIGN
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,11 +24,17 @@ import { environment } from '../environments/environment';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    // ROUTING
     AppRoutingModule,
+    // MATERIAL DESIGN
     BrowserAnimationsModule,
+    // FIREBASE
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    // MODULES
+    CoreModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
